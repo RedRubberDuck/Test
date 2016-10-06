@@ -1,0 +1,1 @@
+Optimalizalas tantargy feladatai
