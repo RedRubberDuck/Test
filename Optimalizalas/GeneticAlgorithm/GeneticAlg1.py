@@ -7,17 +7,18 @@ import math
 import Crossover
 import Mutation
 
-def BSGenetic(function,search_interval,dimension):
+def BSGenetic2D(function,search_interval,dimension):
     nr_chromosome=100
     nr_bits=32
     
     nr_sel=int(math.ceil(math.sqrt(nr_chromosome))+1)
     print nr_sel
     population=RandomPopulation(search_interval,nr_chromosome,dimension)
-    
+    all_population=[]
     run=True
     k=1
     while run:
+        all_population.append(population)
         val_population=CalculateValues(function,population)
         #print val_population
         populationArray=OrdonatePopulation(population,val_population)
@@ -39,6 +40,7 @@ def BSGenetic(function,search_interval,dimension):
         print sel_population
         if k>10:
             run=False
+            
     print "End of method",selectedpopulationArray
 
 
